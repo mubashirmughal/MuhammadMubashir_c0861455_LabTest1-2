@@ -54,7 +54,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func lapTapped(_ sender: Any) {
-        
+ 
     }
     
     @objc func timerCounter() -> Void {
@@ -81,7 +81,8 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You tapped me")
+        print(timer)
+        
     
     }
 }
@@ -95,7 +96,7 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.textLabel?.text = "Hello World"
+        cell.textLabel?.text = "LAP"
         return cell
     }
     
