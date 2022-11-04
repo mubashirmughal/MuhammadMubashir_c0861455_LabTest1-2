@@ -53,6 +53,10 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func lapTapped(_ sender: Any) {
+        
+    }
+    
     @objc func timerCounter() -> Void {
         count = count + 1
         let time = secondsToHoursMinutesSeconds(seconds: count)
