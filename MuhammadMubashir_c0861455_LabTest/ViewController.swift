@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var TimerLabel: UILabel!
     @IBOutlet weak var startStopButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
+    @IBOutlet weak var lap: UIButton!
+    @IBOutlet weak var tableView: UITableView!
     
     var timer:Timer = Timer()
     var count:Int = 0
@@ -20,14 +22,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        startStopButton.setTitleColor(UIColor.green, for: .normal)
+        tableView.delegate = self
+        tableView.dataSource = self
     }
 
     @IBAction func resetTapped(_ sender: Any) {
         let alert = UIAlertController(title: "Reset Timer?", message: "Are you sure you would like to reset the timer?", preferredStyle: .alert)
-       // alert.addAction(UIAlertAction(title: "CANCEL", style: .cancel, handler: {(_) in
-            //do nothing
-     //   } ))
+  
         alert.addAction(UIAlertAction(title: "YES", style: .cancel, handler: {(_) in
             self.count = 0
             self.timer.invalidate()
@@ -73,7 +74,28 @@ class ViewController: UIViewController {
     }
 }
 
+extension ViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("You tapped me")
+    
+    }
+}
 
+extension ViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        cell.textLabel?.text = "Hello World"
+        return cell
+    }
+    
+}
 
 
 
