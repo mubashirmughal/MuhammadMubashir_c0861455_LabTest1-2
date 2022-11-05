@@ -55,6 +55,7 @@ class ViewController: UIViewController {
     
     @IBAction func lapTapped(_ sender: Any) {
         print(TimerLabel ?? 0)
+        addCell()
  
     }
     
