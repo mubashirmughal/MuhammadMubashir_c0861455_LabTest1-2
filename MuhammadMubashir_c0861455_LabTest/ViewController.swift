@@ -82,14 +82,15 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       print(TimerLabel ?? 0)
-        
+        print(TimerLabel ?? 0)
     
     }
 }
 
 extension ViewController: UITableViewDataSource {
-    
+    @objc func addCell(){
+         //add cell
+     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
