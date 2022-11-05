@@ -54,6 +54,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func lapTapped(_ sender: Any) {
+        print(TimerLabel ?? 0)
  
     }
     
@@ -81,7 +82,7 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(timer)
+       print(TimerLabel ?? 0)
         
     
     }
